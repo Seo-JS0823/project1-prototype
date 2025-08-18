@@ -1,0 +1,24 @@
+# 검색어 입력해서 주소 검색
+SELECT
+   TRIM(search)
+FROM
+   address
+WHERE
+   contains(search, '#{searchText}') > 0;
+
+# 검색어 입력해서 주소 검색 1000줄만
+SELECT
+   TRIM(search)
+FROM
+   address
+WHERE
+   contains(search, '#{searchText}') > 0
+OFFSET 0 rows FETCH NEXT 1000 rows ONLY;
+
+# 기업테이블 or 직원테이블에 넣을때 검색
+SELECT
+   address_id
+FROM
+   address
+WHERE
+   search = '#{roadAddress}';

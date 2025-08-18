@@ -1,5 +1,0 @@
-CREATE INDEX search_road
-ON road_code (road_name);
-
-CREATE INDEX search_jibun
-ON jibun_address (district, town, lot_main);
