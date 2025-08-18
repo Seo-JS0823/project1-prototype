@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/aside.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/search.css">
+  <title>Document</title>
+  <style>
+    .department_add {
+      width: 50%;
+      min-width: 702px;
+      min-height: 700px;
+      margin: 0 auto;
+      margin-top: 50px;
+
+      padding: 10px;
+
+      background-color: #F5F5F5;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      border: 1px solid black;
+      border-radius: 15px;
+    }
+
+    .department_box {
+      border: 1px solid #000;
+      border-radius: 10px;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      
+      width:100%;
+      min-width: 650px;
+
+      padding: 5px;
+      height: 100%;
+      background-color: white;
+
+      text-align: center;
+
+      .head_menu {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        width: 100%;
+        height: 50px;
+
+        label {
+          width: 130px;
+          font-size: 20px;
+          font-weight: 600;
+        }
+      
+        input {
+          width: 70%;
+          height: 30px;
+          border-radius: 10px;
+          border: none;
+          box-shadow:
+            0 0 3px #000,
+            0 0 6px #999;
+          outline: none;
+          padding-left: 10px;
+        }
+
+        button {
+          width: 100px;
+          line-height: 30px;
+          border: none;
+          border-radius: 10px;
+
+          background-color: #0E8B63;
+          font-size: 16px;
+          font-weight: 600;
+          margin: 0 auto;
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+
+        button:hover {
+          font-size: 18px;
+          box-shadow: 
+            0 0 5px #FFF,
+            0 0 10px #000;
+        }
+
+      }
+
+      div {
+        width: 90%;
+        height: 90%;
+        margin: 0 auto;
+        text-align: center;
+
+        table {
+          margin: 0 auto;
+          width: 90%;
+          table-layout: fixed;
+          
+        }
+
+        table, td, th {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+        
+        td {
+          font-size: 15px;
+        }
+      }
+
+      .department_head {
+        display: inline-block;
+
+        margin: 0px;
+        margin-bottom: 15px;
+        width: 30%;
+
+        line-height: 35px;
+
+        border-radius: 10px;
+
+        font-size: 20px;
+        font-weight: 600;
+
+        background-color: #0E8B63;
+      }
+
+    }
+    .department_box:first-child {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+<!-- 왼쪽 메뉴바 나중에 <aside> 부분 분리 -->
+<aside class="aside-list-l">
+    <div class="aside-inner-div">
+        <a class="aside-a-s" href="">
+            <img class="-img-logo" src="../images/logo.png"/>
+            <label class="-m-label">Employee Management</label>
+        </a>
+    </div>
+    <hr class="aside-inner-s-hr">
+    <div class="aside-select-div">
+        <p class="aside-select-text">구현기능목록1</p>
+        <ul class="aside-option-menu">
+            <li><a href="">직원조회</a></li>
+            <li><a href="">신규 입사자 등록</a></li>
+            <li><a href="">퇴사자 관리</a></li>
+            <li><a href="">인적 정보 변경</a></li>
+        </ul>
+    </div>
+    <hr class="aside-inner-s-hr">
+    <div class="aside-select-div">
+      <p class="aside-select-text">구현기능목록2</p>
+      <ul class="aside-option-menu">
+        <li><a href="">근퇴현황</a></li>
+        <li><a href="">연차관리</a></li>
+        <li><a href="">휴가신청/승인</a></li>
+      </ul>
+    </div>
+  </aside>
+  
+  <!-- 메인 영역 -->
+  <main>
+    <!-- 메인 헤더 영역 -->
+    <div class="main-header-box">
+      <div class="main-header-menu">
+        <p>부서관리</p>
+      </div>
+      <div class="main-header-menu">
+        <a href="">여기엔 뭐가??</a>
+      </div>
+    </div>
+    
+    <div class="department_add">
+          <form action="" method="post">
+            <div class="department_box">
+              <p class="department_head">부서추가</p>
+              <div class="head_menu">
+                <label>부서 ID</label><input type="text" name=""/>
+              </div>
+              <div class="head_menu">
+                <label>부서명</label><input type="text" name=""/>
+              </div>
+              <div class="head_menu">
+                <label>부서 담당자</label><input type="text" name=""/>
+              </div>
+              <div class="head_menu">
+                <div>
+                  <button type="submit">등록</button>
+                  <button type="button">취소</button>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="department_box">
+            <p class="department_head">부서목록</p>
+            <div>
+              <table>
+                <colgroup>
+                  <col style="width: 100px;">
+                  <col>
+                  <col style="width: 100px">
+                  <col style="width: 70px">
+                </colgroup>
+                <tr>
+                  <th>부서ID</th>
+                  <th>부서이름</th>
+                  <th>부서담당자</th>
+                  <th>인원</th>
+                </tr>
+                <tr>
+                  <td>데이타</td>
+                  <td>데이타</td>
+                  <td>데이타</td>
+                  <td>데이타</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+    </div>
+    
+  </main>
+</body>
+</html>
