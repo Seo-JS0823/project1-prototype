@@ -1,0 +1,25 @@
+# 기업정보 테이블 계약기능 추가버전
+# 계약기간에 따라 계약 만료일을 로직에서 계산해서 INSERT 해야할듯
+create table business_contract(
+company_name varchar2(50) not null,
+kor_business_number varchar2(20) unique,
+ceo_name varchar2(20) not null,
+company_id varchar2(25),
+password varchar2(25) not null,
+address_id number(7,0),
+industry_main varchar2(5),
+industry_sub varchar2(3),
+registration_date DATE DEFAULT SYSDATE,
+contract_period varchar2(15) not null,
+expiration_date DATE not null,
+primary key
+   (company_id),
+foreign key
+   (address_id)
+references
+   address (address_id),
+foreign key
+   (industry_main, industry_sub)
+references
+   industry_sub (major_code, sub_code)
+);
