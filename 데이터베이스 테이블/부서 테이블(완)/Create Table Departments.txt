@@ -5,10 +5,6 @@ department_name varchar2(60) not null,
 manager_id varchar2(30) null,
 primary key (company_id, department_id),
 foreign key
-    (company_id)
+    (company_id, manager_id)
 references
-    business (company_id),
-foreign key
-    (manager_id)
-references
-    employees (employee_id));
+    employees (company_id, employee_id));

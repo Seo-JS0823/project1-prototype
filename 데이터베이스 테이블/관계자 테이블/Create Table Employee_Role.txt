@@ -1,0 +1,11 @@
+CREATE TABLE employee_role(
+role_id number(1,0) primary key,
+role_name varchar2(15) not null);
+
+insert into employee_role (role_id, role_name) values ('0', '대표');
+insert into employee_role (role_id, role_name) values ('1', '관리자');
+insert into employee_role (role_id, role_name) values ('2', '직원');
+
+0 = 대표
+1 = 관리자
+2 = 직원

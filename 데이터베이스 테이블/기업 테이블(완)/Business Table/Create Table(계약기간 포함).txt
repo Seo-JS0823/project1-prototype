@@ -2,14 +2,14 @@
 # 계약기간에 따라 계약 만료일을 로직에서 계산해서 INSERT 해야할듯
 create table business_contract(
 company_name varchar2(50) not null,
-kor_business_number varchar2(20) unique,
+kor_business_number varchar2(20) not null unique,
 ceo_name varchar2(20) not null,
-company_id varchar2(25),
+company_id varchar2(25) not null,
 password varchar2(25) not null,
-address_id number(7,0),
-industry_main varchar2(5),
-industry_sub varchar2(3),
-registration_date DATE DEFAULT SYSDATE,
+address varchar2(300) null,
+industry_main varchar2(5) not null,
+industry_sub varchar2(3) not null,
+registration_date date default sysdate not null,
 contract_period varchar2(15) not null,
 expiration_date DATE not null,
 primary key
@@ -23,3 +23,15 @@ foreign key
 references
    industry_sub (major_code, sub_code)
 );
+
+company_name		Not null	varchar2(50)	
+kor_business_number	Not null	varchar2(20)	UQ
+ceo_name		Not null	varchar2(20)	
+company_id		Not null	varchar2(25)	PK
+password		Not null	varchar2(25)	
+address					varchar2(300)	
+industry_main		Not null	varchar2(5)	FK1
+industry_sub		Not null	varchar2(3)	FK1
+registration_date	Not null	date		
+contract_period		Not null	varchar2(15)	
+expiration_date		Not null	date		
