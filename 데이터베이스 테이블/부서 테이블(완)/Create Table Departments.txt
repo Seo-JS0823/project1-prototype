@@ -1,7 +1,14 @@
 create table departments(
-company_id varchar2(25),
-department_id varchar2(10) primary key,
+company_id varchar2(25) not null,
+department_id varchar2(10) not null,
 department_name varchar2(60) not null,
 manager_id varchar2(30) null,
-foreign key (company_id)
-references business (company_id));
+primary key (company_id, department_id),
+foreign key
+    (company_id)
+references
+    business (company_id),
+foreign key
+    (manager_id)
+references
+    employees (employee_id));

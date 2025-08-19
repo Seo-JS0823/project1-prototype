@@ -1,6 +1,6 @@
 create table resignation(
-company_id varchar2(25),
-employee_id varchar2(25),
+company_id varchar2(25) not null,
+employee_id varchar2(25) not null,
 resignation_date DATE not null,
 foreign key
     (company_id)

@@ -14,15 +14,11 @@ job varchar2(100) null,
 work_type_name varchar2(10),
 employment_date DATE not null,
 exit_flag number(1,0) default 0 not null,
-primary key (company_id, department_id, employee_id),
+primary key (company_id, employee_id),
 foreign key
-    (company_id)
+    (company_id, department_id)
 references
-    business (company_id),
-foreign key
-    (department_id)
-references
-    departments (department_id),
+    departments (company_id, department_id),
 foreign key
     (grade_id)
 references
