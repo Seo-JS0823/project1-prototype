@@ -11,17 +11,18 @@ GENDER             : 직원성별                Not Null
 BIRTHDATE          : 직원생년월일            Not Null
 PHONE_NUM          : 직원전화번호                Null
 EMAIL              : 직원이메일                  Null
+address_ID         : 직원 주소 분류 코드     Not Null          FK
 
 JOB                : 맡은업무설명                Null
 
 정규화
 GRADE              : 직급                    Not Null          FK
---------------------
+------------------
 GRADE 테이블
 
 직급ID
 직급명
---------------------
+------------------
 
 WORK_TYPE          : 근무형태ID              Not Null          FK
 
@@ -31,7 +32,7 @@ EXIT_FLAG          : 퇴사여부 (0/1)          Not Null       1:퇴사함, 0:�
 -------------------------------------
 다른 테이블로 빼기
 RESIGNATION_DATE   : 퇴사일                      Null
---------------------
+------------------
 
 사직직원  테이블(History)
 직원ID    FK

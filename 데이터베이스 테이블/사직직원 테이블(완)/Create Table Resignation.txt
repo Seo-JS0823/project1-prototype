@@ -1,0 +1,10 @@
+create table resignation(
+company_id varchar2(25),
+employee_id varchar2(25),
+resignation_date DATE not null,
+foreign key
+    (company_id)
+references
+    business (company_id),
+primary key
+    (company_id, employee_id));

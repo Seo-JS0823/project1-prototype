@@ -1,0 +1,19 @@
+기타 UND
+
+인턴 INT
+사원 STA
+대리 SSTA
+과장 MAN
+차장 SMAN
+부장 HEAD
+
+상무    EMD
+전무    EEMD
+부사장  EVP
+사장    EP
+회장    EC
+
+대표이사 CEO
+재무총괄 CFO
+운영총괄 COO
+기술총괄 CTO
