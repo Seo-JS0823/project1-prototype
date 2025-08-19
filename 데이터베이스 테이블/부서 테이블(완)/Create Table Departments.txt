@@ -1,0 +1,7 @@
+create table departments(
+company_id varchar2(25),
+department_id varchar2(10) primary key,
+department_name varchar2(60) not null,
+manager_id varchar2(30) null,
+foreign key (company_id)
+references business (company_id));

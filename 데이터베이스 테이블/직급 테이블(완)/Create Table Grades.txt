@@ -1,0 +1,3 @@
+CREATE TABLE grades(
+grade_id varchar2(10) primary key,
+grade_name varchar2(20) not null);

@@ -14,8 +14,8 @@ SELECT
    C.province AS province,
    C.district AS district,
    C.road_name AS road_name,
-   S.building_name2 AS building,
-   TRIM(NVL(C.district, NULL) || ' ' || C.road_name || ' ' || DECODE(A.building_num_sub, 0, TO_CHAR(A.building_num_main), TO_CHAR(A.building_num_main || '-' || A.building_num_sub)) || ' ' || DECODE(S.building_name2, null, null,S.building_name2)) AS search
+   S.official_building_name AS building,
+   TRIM(NVL(C.district, NULL) || ' ' || C.road_name || ' ' || DECODE(A.building_num_sub, 0, TO_CHAR(A.building_num_main), TO_CHAR(A.building_num_main || '-' || A.building_num_sub)) || ' ' || DECODE(S.official_building_name, null, null,S.official_building_name)) AS search
 FROM
    road_address A, road_code C, road_subdata S
 WHERE

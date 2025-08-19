@@ -2,15 +2,55 @@
 
 
 직원 테이블
-EMPLOYEE_ID
-DEPARTMENT_ID
-MANAGER_ID
-NAME
-GENDER
-BIRTHDATE
-PHONE_NUM
-EMAIL
-JOB_ID
-GRADE
-EMPLOYMENT_DATE
-RESIGNATION_DATE
+
+Company_ID         : 기업ID                  Not Null          FK
+DEPARTMENT_ID      : 부서ID                  Not Null          FK
+EMPLOYEE_ID        : 직원ID                  Not Null          PK
+NAME               : 직원이름                Not Null
+GENDER             : 직원성별                Not Null
+BIRTHDATE          : 직원생년월일            Not Null
+PHONE_NUM          : 직원전화번호                Null
+EMAIL              : 직원이메일                  Null
+
+JOB                : 맡은업무설명                Null
+
+정규화
+GRADE              : 직급                    Not Null          FK
+--------------------
+GRADE 테이블
+
+직급ID
+직급명
+--------------------
+
+WORK_TYPE          : 근무형태ID              Not Null          FK
+
+EMPLOYMENT_DATE    : 입사일                  Not Null
+EXIT_FLAG          : 퇴사여부 (0/1)          Not Null       1:퇴사함, 0:근무중
+
+-------------------------------------
+다른 테이블로 빼기
+RESIGNATION_DATE   : 퇴사일                      Null
+--------------------
+
+사직직원  테이블(History)
+직원ID    FK
+직원이름  select
+입사일    select
+퇴사일    select
+
+직원계약기간 테이블
+
+
+
+
+
+
+
+
+
+
+
+
+
+
