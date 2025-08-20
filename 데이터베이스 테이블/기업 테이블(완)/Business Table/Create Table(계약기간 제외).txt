@@ -12,10 +12,6 @@ registration_date date default sysdate not null,
 primary key
    (company_id),
 foreign key
-   (address_id)
-references
-   address (address_id),
-foreign key
    (industry_main, industry_sub)
 references
    industry_sub (major_code, sub_code)
