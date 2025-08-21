@@ -1,0 +1,5 @@
+-- 출석체크버튼 누르면 실행되는 SQL
+insert into attendance_record
+   (employee_id, atte_start, ness_flag)
+VALUES
+   ('20208394671', SYSDATE, 0);

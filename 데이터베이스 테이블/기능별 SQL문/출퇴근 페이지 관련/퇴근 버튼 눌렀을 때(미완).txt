@@ -1,0 +1,15 @@
+-- 퇴근버튼 누르면 실행되는 SQL 아직 미완성이고 조건문 걸어서 7시 전이면 지각으로 처리하거나 해야댐
+-- 밑에 TO_TIMESTAMP를 전부 SYSDATE로 바꾸면된다.
+UPDATE
+   attendance_record
+SET
+   atte_end = TO_TIMESTAMP('2025-08-22 17:05:01', 'YYYY-MM-DD HH24:MI:SS'),
+   ness_flag = 4,
+   work_time = TO_CHAR(FLOOR(EXTRACT(DAY FROM(TO_TIMESTAMP('2025-08-22 17:05:01', 'YYYY-MM-DD HH24:MI:SS') - atte_start))
+               * 24 + 
+               EXTRACT(HOUR FROM(TO_TIMESTAMP('2025-08-22 17:05:01', 'YYYY-MM-DD HH24:MI:SS') - atte_start))), 'FM00')
+               || '시간 ' ||
+               TO_CHAR(EXTRACT(MINUTE FROM(TO_TIMESTAMP('2025-08-22 17:05:01', 'YYYY-MM-DD HH24:MI:SS') - atte_start)), 'FM00')
+               || '분'
+WHERE
+   employee_id = '20208394671';

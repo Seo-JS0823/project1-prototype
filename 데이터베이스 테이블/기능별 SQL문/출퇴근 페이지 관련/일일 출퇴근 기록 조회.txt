@@ -1,0 +1,15 @@
+SELECT
+   TO_CHAR(A.currentDate, 'yyyy"년" mm"월" dd"일"') AS 날짜,
+   B.name AS 이름,
+   B.employee_id AS 사원코드,
+   C.department_name AS 부서,
+   TO_CHAR(A.atte_start, 'HH24"시" MI"분"') AS 출근시간,
+   TO_CHAR(A.atte_end, 'HH24"시" MI"분"') AS 퇴근시간,
+   TO_CHAR(A.atte_stop, 'HH24"시" MI"분"') AS 조퇴시간,
+   A.work_time AS 근무한시간,
+   DECODE(ness_flag, 1, '지각', 2, '결석', 3, '조퇴', 4, '정상퇴근', 0, '정상출근') AS 근무상태
+FROM
+   ATTENDANCE_RECORD A, EMPLOYEES B, DEPARTMENTS C
+WHERE
+   A.employee_id = B.employee_id AND
+   B.department_id = C.department_id;

@@ -67,7 +67,7 @@ employee_id varchar2(13) not null,
 atte_start timestamp default sysdate null,
 atte_end timestamp null,
 atte_stop timestamp null,
-work_time varchar2(10) null,
+work_time varchar2(30) null,
 ness_flag number(1,0) not null,
 primary key (currentdate, employee_id),
 foreign key
