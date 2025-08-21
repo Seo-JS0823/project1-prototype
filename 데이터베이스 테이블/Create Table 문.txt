@@ -23,7 +23,7 @@ phone_num varchar2(20) null,
 email varchar2(320) null,
 address varchar2(300) not null,
 employment_date date not null,
-emp_flag number(1,0) default 0 not null,
+emp_flag number(1,0) default 1 not null,
 foreign key
     (department_id)
 references
