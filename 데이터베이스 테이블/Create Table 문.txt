@@ -1,6 +1,6 @@
 create table positions(
 position_id number(2,0) primary key,
-position_name varchar2(20) not null);
+position_name varchar2(25) not null);
 
 create table worktypes(
 worktype_id number(1,0) primary key,
